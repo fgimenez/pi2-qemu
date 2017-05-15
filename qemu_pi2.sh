@@ -3,7 +3,7 @@ set -ex
 
 create_image(){
     if [ ! -f pi2.img/pi2.img ]; then
-	      sudo snap install --devmode --beta ubuntu-image || true
+	      sudo snap install --classic --edge ubuntu-image || true
 	      snap known --remote model series=16 model=pi2 brand-id=canonical > pi2.model
         sudo /snap/bin/ubuntu-image -c edge -O pi2.img pi2.model
         sudo chown -R $USER:$USER pi2.img
